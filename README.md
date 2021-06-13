@@ -48,7 +48,7 @@ python run_experiment.py myexperiments trackingnet
 ```
 
 ## Evaluation on VOT2019 using Matlab R2016b
-We provide a VOT Matlab toolkit integration for the LEAST tracker. There is the tracker_D3S.m Matlab file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot_wrapper.py' script to integrate the tracker to the toolkit.
+We provide a VOT Matlab toolkit integration for the LEAST tracker. There is the tracker_LEAST.m Matlab file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot_wrapper.py' script to integrate the tracker to the toolkit.
 
 ## Training the networks
 The LEAST tracker is pre-trained for segmentation task only on the YouTube VOS dataset. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the train directory of the VOS dataset.
@@ -59,12 +59,19 @@ The LEAST tracker is pre-trained for segmentation task only on the YouTube VOS d
 Workspace: ltr/admin/local.py  workspace_dir.
 Dataset: ltr/admin/local.py  vos_dir.
 ```
-2) Run training.
+3) Taining the segmentation network
 ```
 cd ltr
 python run_training.py segm segm_default
 ```
-
+4) Taining the mask initialization network
+```
+cp ./LEAST/ ./LEAST_maskInit
+cd ./LEAST_maskInit/ltr
+move the file (./actors/segm_actor_maskInitNet.py; ./data/segm_processing_maskInitNet.py; ./train_seetings/segm/segm_default_maskInitNet.py)
+  to (./actors/segm_actor.py; ./data/segm_processing.py; ./train_seetings/segm/segm_default.py) respectively.
+python run_training.py segm segm_default
+```
 
 ## Acknowledgement
 This a modified version of [D3S](https://github.com/alanlukezic/d3s) tracker which is based on the [pytracking](https://github.com/visionml/pytracking) framework. We would like to thank the author Martin Danelljan of pytracking and the author Alan Lukežič of D3S.
