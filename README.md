@@ -68,8 +68,9 @@ python run_training.py segm segm_default
 ```
 cp ./LEAST/ ./LEAST_maskInit
 cd ./LEAST_maskInit/ltr
-move the file (./actors/segm_actor_maskInitNet.py; ./data/segm_processing_maskInitNet.py; ./train_seetings/segm/segm_default_maskInitNet.py)
-  to (./actors/segm_actor.py; ./data/segm_processing.py; ./train_seetings/segm/segm_default.py) respectively.
+move the file 
+ (./actors/segm_actor_maskInitNet.py; ./data/segm_processing_maskInitNet.py; ./train_seetings/segm/segm_default_maskInitNet.py)
+ to (./actors/segm_actor.py; ./data/segm_processing.py; ./train_seetings/segm/segm_default.py) respectively.
 python run_training.py segm segm_default
 ```
 
