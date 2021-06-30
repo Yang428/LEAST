@@ -24,7 +24,7 @@ bash install.sh conda_install_path pytracking
 You can download the models from the [Baidu cloud link](https://pan.baidu.com/s/11kn8IyxN0AJ8D0C780FLUg), the extraction code is 'lxa4'. Then put the model files 'SegmNet.pth.tar and SegmNet_maskInitNet.pth.tar' to the subfolder 'pytracking/networks'.
 
 ## Testing the tracker
-There are the raw [resullts](https://github.com/Yang428/LEAST/resultsOnBenchmarks) on three datasets. 
+There are the [raw resullts](https://github.com/Yang428/LEAST/tree/master/resultsOnBenchmarks) on three datasets. 
 1) Download the testing datasets Got-10k, TrackingNet and VOT2019 from the following Baidu cloud links.
 * [Got-10k](https://pan.baidu.com/s/1TMCb2LMUigtchzrFaTw-EA), the extraction code is 'pcj6'.
 * [TrackingNet](https://pan.baidu.com/s/1qc7FSjHXvAJkssJj-sRFKA), the extraction code is 'q00p'.
