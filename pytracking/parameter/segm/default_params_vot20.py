@@ -36,7 +36,7 @@ def parameters():
     deep_params.output_sigma_factor = 1/4        # Standard deviation of Gaussian label relative to target size
 
     # Training parameters
-    params.sample_memory_size = 190              # Memory size
+    params.sample_memory_size = 200              # Memory size
     params.train_skipping = 10                   # How often to run training (every n-th frame)
 
     # Online model parameters
