@@ -52,7 +52,7 @@ python run_experiment.py myexperiments trackingnet
 We provide a [VOT Matlab toolkit](https://github.com/votchallenge/toolkit-legacy) integration for the LEAST tracker. There is the [tracker_LEAST.m](https://github.com/Yang428/LEAST/tree/master/pytracking/utils) Matlab file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot_wrapper.py' script to integrate the tracker to the toolkit.
 
 ## Evaluation on VOT2020 using Python Toolkit
-We provide a [VOT Python toolkit](https://github.com/votchallenge/toolkit-legacy) integration for the LEAST tracker. There is the [trackers.ini](https://github.com/Yang428/LEAST/tree/master/pytracking/utils) setting file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot20_wrapper.py' script to integrate the tracker to the toolkit.
+We provide a [VOT Python toolkit](https://github.com/votchallenge/toolkit) integration for the LEAST tracker. There is the [trackers.ini](https://github.com/Yang428/LEAST/tree/master/pytracking/utils) setting file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot20_wrapper.py' script to integrate the tracker to the toolkit.
 ```
 cd pytracking/workspace_vot2020
 pip install git+https://github.com/votchallenge/vot-toolkit-python
