@@ -241,7 +241,7 @@ class Segm(BaseTracker):
             del self.joint_problem, self.joint_optimizer
 
 ########## Coding by Yang 2020.10 ######## update background features #####################################
-    def update_train_feat_segm(self, image, pos, sz):
+    def update_bg_segm(self, image, pos, sz):
         # pos and sz are in the image coordinates
         tlx_ = pos[1] - sz[1] / 2
         tly_ = pos[0] - sz[0] / 2
@@ -403,10 +403,10 @@ class Segm(BaseTracker):
 ########## Coding by Yang 2020.10 ######## update background features ################
             if (hard_negative or self.segm_hard_neg) and ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip-1)): 
                 ## if there is hard negative in background, update 10 skip
-                self.update_train_feat_segm(image, new_pos, self.target_sz)
+                self.update_bg_segm(image, new_pos, self.target_sz)
             elif ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip+9)) or (self.frame_num<(self.params.segm_update_skip+1)):
                 ## update 20 skip or update the first 10 frames
-                self.update_train_feat_segm(image, new_pos, self.target_sz)         
+                self.update_bg_segm(image, new_pos, self.target_sz)         
 ######################################################################################
 
         # Train filter
