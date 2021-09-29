@@ -1,6 +1,6 @@
 # LEAST Tracker
 
-The main codes of the LEAST tracker will be available as soon as possible.
+The training codes of the LEAST tracker will be available as soon as possible.
 
 ## Running Environments
 * Pytorch 1.1.0, Python 3.6.12, Cuda 10.0, torchvision 0.3.0, cudatoolkit 10.0, Matlab R2016b.
