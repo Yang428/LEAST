@@ -25,7 +25,7 @@ You can download the models from the [Baidu cloud link](https://pan.baidu.com/s/
 
 ## Testing the tracker
 There are the [raw resullts](https://github.com/Yang428/LEAST/tree/master/resultsOnBenchmarks) on three datasets. 
-1) Download the testing datasets Got-10k, TrackingNet and VOT2019 from the following Baidu cloud links.
+1) Download the testing datasets Got-10k, TrackingNet, VOT2019 and VOT2020 from the following Baidu cloud links.
 * [Got-10k](https://pan.baidu.com/s/1t_PvpIicHc0U9yR4upf-cA), the extraction code is '78hq'.
 * [TrackingNet](https://pan.baidu.com/s/1BKtc4ndh_QrMiXF4fBB2sQ), the extraction code is '5pj8'.
 * [VOT2019](https://pan.baidu.com/s/1vf7l4sQMCxZY_fDsHkuwTA), the extraction code is '61kh'.
