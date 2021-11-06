@@ -47,8 +47,6 @@ class Segm(BaseTracker):
         self.fparams = self.params.features_filter.get_fparams('feature_params')
 
         self.time = 0
-        tic = time.time()
-
         self.rotated_bbox = True
 
         if len(state) == 8:
@@ -167,9 +165,6 @@ class Segm(BaseTracker):
  
         # array of scores
         self.scores = np.array([1])
-
-        toc_ = time.time() - tic
-        self.time += toc_
 
     def init_optimization(self, train_x, init_y):
         # Initialize filter
