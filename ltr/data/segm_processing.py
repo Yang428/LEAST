@@ -180,7 +180,7 @@ class SegmProcessing(BaseProcessing):
 
             if s == 'train':
                 data[s + '_masks'] = [torch.from_numpy(np.expand_dims(x, axis=0)) for x in crops_mask]
-########## Coding by Yang 2020.10 ######## Generate contours of masks #####################################
+            ## Generate contours of masks 
             if s == 'test':
                 for x in crops_mask:
                     contours, _ = cv2.findContours(x.astype('uint8'), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
@@ -188,7 +188,7 @@ class SegmProcessing(BaseProcessing):
                     mask_ = cv2.drawContours(x, contours, -1, 1, thickness=1)
                     data['test_masks'] = [torch.from_numpy(np.expand_dims(mask_, axis=0))]
                     data['test_contour'] = [torch.from_numpy(np.expand_dims(mask_contour, axis=0))]
-###########################################################################################################
+
             if s == 'train' and random.random() < 0.001:
                 # on random use binary mask generated from axis-aligned bbox
                 data['test_images'] = copy.deepcopy(data['train_images'])
