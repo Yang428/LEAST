@@ -9,7 +9,7 @@ Yijin Yang and Xiaodong Gu.
 <b>BibTex citation:</b></br>
 @ARTICLE{Yijin2021,<br>
 title = {Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking},<br>
-author = {Yijin, Yang and Xiaodong, Gu},<br>
+author = {Yijin, Yang. and Xiaodong, Gu.},<br>
 journal = {DSP},<br>
 volume  = {},<br>
 number = {},<br>
