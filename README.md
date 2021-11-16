@@ -1,6 +1,22 @@
 # LEAST - Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking
 
 ## Publication:
+Yijin Yang and Xiaodong Gu.
+<b>Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking.</b>
+<i>DSP 2021</i>.</br>
+[Paper] </br>
+
+<b>BibTex citation:</b></br>
+@ARTICLE{Yijin2021,<br>
+title = {Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking},<br>
+author = {Yijin, Yang and Xiaodong, Gu},<br>
+journal = {DSP},<br>
+volume  = {},<br>
+number = {},<br>
+year    = {2021},<br>
+pages   = {},<br>
+doi = {}<br>
+}
 
 ## Abstract
 Segmentation based discriminant trackers have currently achieved astonishing performance in terms of scale estimation, but are not robust to significant surroundings changes and ignore the completeness of object shape. In this paper, we propose a conceptually concise yet efficient segmentation based tracking algorithm which can adaptively learn the surroundings and the edges of the tracked object. The proposed approach, named Learning Edges and Adaptive Surroundings Tracking (LEAST), can effectively leverage the backdrop information by updating the background features online. As a consequence, it can adapt to the changes in the background of the object and suppress the background clutters or distractors to obtain a more precise object state estimation. Besides, a novel loss function is introduced to emphasize on the edges of the object to provide a more accurate mask prediction for object localization. Furthermore, we introduce a new mask initialization network and a modified refinement module to make the segmentation network more suitable for tracking tasks. And the extensive qualitative and quantitative experimental results on several common visual object tracking benchmarks show that the proposed tracker outperforms all advanced trackers and sets a new state-of-the-art performance on GOT-10K dataset.
