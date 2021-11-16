@@ -259,7 +259,7 @@ class Segm(BaseTracker):
         if self.params.use_projection_matrix:
             del self.joint_problem, self.joint_optimizer
 
-########## Coding by Yang 2020.10 ######## update background features #####################################
+    ####### update background features #########
     def update_bg_segm(self, image, pos, sz):
         # pos and sz are in the image coordinates
         tlx_ = pos[1] - sz[1] / 2
@@ -329,7 +329,6 @@ class Segm(BaseTracker):
         self.bkgd_masks.append([mask_gpu])  
         self.segm_update_flag = True 
         self.segm_update_num = self.frame_num 
-###############################################################################################################
 
     def track(self, image):
 
@@ -418,14 +417,14 @@ class Segm(BaseTracker):
 
             # Update memory
             self.update_memory(train_x, train_y, learning_rate)
-########## Coding by Yang 2020.10 ######## update background features ################
-            if (hard_negative or self.segm_hard_neg) and ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip-1)): 
+            ## update background features
+            if (hard_negative or self.segm_hard_neg)：
+                if ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip-1)): 
                 ## if there is hard negative in background, update 10 skip
                 self.update_bg_segm(image, new_pos, self.target_sz)
             elif ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip+9)) or (self.frame_num<(self.params.segm_update_skip+1)):
                 ## update 20 skip or update the first 10 frames
                 self.update_bg_segm(image, new_pos, self.target_sz)             
-######################################################################################
 
         # Train filter
         if hard_negative:
@@ -435,7 +434,7 @@ class Segm(BaseTracker):
 
         if self.params.use_segmentation:
             if pred_segm_region is not None:
-######## Changed by Yang 2020.10.11######## for visualization ################
+                ## for visualization
                 '''
                 pred_segm_region1 = torch.tensor(pred_segm_region)
                 new_state1 = torch.cat((pred_segm_region1[[0, 1]], pred_segm_region1[[2, 3]]))
@@ -443,7 +442,6 @@ class Segm(BaseTracker):
                         self.init_visualization()
                 self.visualize(image, new_state1)
                 '''
-##############################################################################
                 return pred_segm_region
 
         # Return new state
@@ -872,7 +870,7 @@ class Segm(BaseTracker):
                 p4 = self.gt_poly[6:]
                 cv2.fillConvexPoly(mask, np.array([p1, p2, p3, p4], dtype=np.int32), 1)
                 mask = mask.astype(np.float32)
-######## Changed by Yang 2020.10.11######## for visualization ################
+                ## for visualization
                 '''
                 if p1[0] < 0:
                    p1[0] = 0
@@ -886,7 +884,7 @@ class Segm(BaseTracker):
                 #plt.show()
                 #plt.title('init patch')
                 '''
-##############################################################################
+                ####################
             else:
                 p1 = bb[:2]
                 p2 = [bb[0] + bb[2], bb[1]]
@@ -995,7 +993,7 @@ class Segm(BaseTracker):
 
                 target_pixels = np.sum((mask > 0.5).astype(np.float32))
                 self.segm_init_target_pixels = target_pixels
-######## Changed by Yang 2020.10.11######## for visualization ################
+                ## for visualization
                 '''
                 plt.figure(figsize=(10,10))
                 plt.imshow(mask)
@@ -1004,7 +1002,7 @@ class Segm(BaseTracker):
                 #plt.title('maskInit')
                 #plt.show()
                 '''
-##############################################################################
+                ####################
                 if self.params.save_mask:
                     segm_crop_sz = math.ceil(math.sqrt(bb[2] * bb[3]) * self.params.segm_search_area_factor)
                     save_mask(None, mask, segm_crop_sz, bb, image.shape[1], image.shape[0],
@@ -1105,8 +1103,7 @@ class Segm(BaseTracker):
             if self.params.save_mask:
                 save_mask(None, mask_real, segm_crop_sz, bb, image.shape[1], image.shape[0],
                           self.params.masks_save_path, self.sequence_name, self.frame_name)
-########## Coding by Yang 2020.10 ######## found negative ####################
-        # found negative
+        ## found negative
         if len(cnt_area) > 1 and len(contours) != 0 and np.max(cnt_area) > 50:  # 1000:
             index = np.argmax(cnt_area)
             cnt_area_tmp = [i for i in cnt_area]
@@ -1116,7 +1113,6 @@ class Segm(BaseTracker):
                 self.segm_hard_neg = True         
             else:
                 self.segm_hard_neg = False
-##############################################################################
         if len(cnt_area) > 0 and len(contours) != 0 and np.max(cnt_area) > 50:  # 1000:
             contour = contours[np.argmax(cnt_area)]  # use max area polygon
             polygon = contour.reshape(-1, 2)
@@ -1193,7 +1189,7 @@ class Segm(BaseTracker):
                     pred_region = [np.min(prbox[:, 0]) + 1, np.min(prbox[:, 1]) + 1,
                                    np.max(prbox[:, 0]) - np.min(prbox[:, 0]) + 1,
                                    np.max(prbox[:, 1]) - np.min(prbox[:, 1]) + 1]
-######## Changed by Yang 2020.10.11######## for visualization ################
+                ## for visualization 
                 '''
                 if True:
                     #pdb.set_trace()
@@ -1221,7 +1217,7 @@ class Segm(BaseTracker):
                     #plt.title('tracking_results')
                     plt.show()
                 '''
-############################################################################
+                ############################################################################
                 return pred_region
 
         return None
