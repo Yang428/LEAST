@@ -235,7 +235,7 @@ class Segm(BaseTracker):
         if self.params.use_projection_matrix:
             del self.joint_problem, self.joint_optimizer
 
-########## Coding by Yang 2020.10 ######## update background features #####################################
+    ## update background features ##
     def update_bg_segm(self, image, pos, sz):
         # pos and sz are in the image coordinates
         tlx_ = pos[1] - sz[1] / 2
@@ -305,7 +305,6 @@ class Segm(BaseTracker):
         self.bkgd_masks.append([mask_gpu])  
         self.segm_update_flag = True 
         self.segm_update_num = self.frame_num 
-###############################################################################################################
 
     def track(self, image):
 
@@ -395,14 +394,12 @@ class Segm(BaseTracker):
 
             # Update memory
             self.update_memory(train_x, train_y, learning_rate)
-########## Coding by Yang 2020.10 ######## update background features ################
             if (hard_negative or self.segm_hard_neg) and ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip-1)): 
                 ## if there is hard negative in background, update 10 skip
                 self.update_bg_segm(image, new_pos, self.target_sz)
             elif ((self.frame_num-self.segm_update_num)>(self.params.segm_update_skip+9)) or (self.frame_num<(self.params.segm_update_skip+1)):
                 ## update 20 skip or update the first 10 frames
                 self.update_bg_segm(image, new_pos, self.target_sz)         
-######################################################################################
 
         # Train filter
         if hard_negative:
@@ -990,7 +987,6 @@ class Segm(BaseTracker):
             mask = np.zeros(mask.shape, dtype=np.uint8)
             cv2.drawContours(mask, contours, -1, 1, thickness=-1)
 
-########## Coding by Yang 2020.10 ######## found negative ####################
         # found negative
         if len(cnt_area) > 1 and len(contours) != 0 and np.max(cnt_area) > 50:  # 1000:
             index = np.argmax(cnt_area)
@@ -1001,7 +997,7 @@ class Segm(BaseTracker):
                 self.segm_hard_neg = True         
             else:
                 self.segm_hard_neg = False
-##############################################################################
+
         if len(cnt_area) > 0 and len(contours) != 0 and np.max(cnt_area) > 50:  # 1000:
             contour = contours[np.argmax(cnt_area)]  # use max area polygon
             polygon = contour.reshape(-1, 2)
