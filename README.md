@@ -82,7 +82,7 @@ vot analysis --workspace ./workspace_vot2020/ LEAST
 ```
 
 ## Training the networks
-The LEAST tracker is pre-trained for segmentation task only on the YouTube VOS dataset. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the train directory of the VOS dataset.
+The LEAST tracker is trained only on the YouTube VOS dataset. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the train directory of the VOS dataset.
 1) Download the training dataset from [this link](https://youtube-vos.org/challenge/2018/).
 
 2) Change the following paths to you own paths.
