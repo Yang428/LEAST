@@ -1,6 +1,6 @@
 # LEAST - Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking
 
-## Publication
+## Citation
 Yijin Yang and Xiaodong Gu.
 <b>Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking. DSP, 121(103309), 2022.</i>.</br>
 
