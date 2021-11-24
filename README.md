@@ -5,7 +5,7 @@ Yijin Yang and Xiaodong Gu.
 <b>Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking. DSP, 121(103309), 2022</i>.</br>
 
 <b>BibTex citation:</b></br>
-@ARTICLE{Yijin2021,<br>
+@ARTICLE{Yijin2022,<br>
 title = {Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking},<br>
 author = {Yijin, Yang. and Xiaodong, Gu.},<br>
 journal = {DSP},<br>
