@@ -95,7 +95,8 @@ python run_training.py segm segm_default
 ## Acknowledgement
 This is a modified version of [D3S](https://github.com/alanlukezic/d3s) tracker which is based on the [pytracking](https://github.com/visionml/pytracking) framework. We would like to thank the author Martin Danelljan of pytracking and the author Alan Lukežič of D3S.
 
-## <b>BibTex citation:</b></br>
+## Citation
+If you find this project useful in your research, please consider cite:
 @ARTICLE{Yijin2022,<br>
 title = {Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking},<br>
 author = {Yijin, Yang. and Xiaodong, Gu.},<br>
