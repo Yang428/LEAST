@@ -1,6 +1,5 @@
-<div align="center">
-<h1>LEAST - Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking </h1>
-</div> 
+# LEAST - Learning Edges and Adaptive Surroundings for Discriminant Segmentation Tracking 
+
 
 ## Publication
 Yijin Yang and Xiaodong Gu.
